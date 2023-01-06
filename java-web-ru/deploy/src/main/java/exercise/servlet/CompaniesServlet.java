@@ -21,10 +21,11 @@ public class CompaniesServlet extends HttpServlet {
         // BEGIN
         PrintWriter out = response.getWriter();
         if (request.getQueryString() == null || request.getQueryString().equals("")) {
-            out.println(getCompanies());
+            String bigMassiveOutput = getCompanies().stream().collect(Collectors.joining("\n"));
+            out.println(bigMassiveOutput);
         } else {
             String output = getCompanies().stream()
-                    .filter(symbol -> symbol.toLowerCase().contains(request.getParameter("search")))
+                    .filter(symbol -> symbol.contains(request.getParameter("search")))
                     .collect(Collectors.joining("\n"));
             out.println(output.length() > 0 ? output : "Companies not found");
         }

@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Locale;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 import com.github.javafaker.Faker;
 
@@ -21,17 +20,5 @@ public class Data {
         }
 
         return companies;
-    }
-
-    public static void main(String[] args) {
-//        for (var company: getCompanies()) {
-//            if (company.toLowerCase().contains("dicken")) {
-//                System.out.println(company);
-//            }
-//        }
-        String output = getCompanies().stream()
-                .filter(symbol -> symbol.toLowerCase().contains("llc"))
-                .collect(Collectors.joining("\n"));
-        System.out.println(output);
     }
 }
