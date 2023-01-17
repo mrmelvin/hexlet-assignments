@@ -138,13 +138,13 @@ public class UsersServlet extends HttpServlet {
                  throws IOException, ServletException {
 
         // BEGIN
-        String username = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
+        String username = request.getParameter("firstName");
+        String lastname = request.getParameter("lastName");
         String email = request.getParameter("email");
         if ((username == null || username.isEmpty()) || (lastname == null || lastname.isEmpty())) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/new.jsp");
-            request.setAttribute("firstname", username);
-            request.setAttribute("lastname", lastname);
+            request.setAttribute("firstName", username);
+            request.setAttribute("lastName", lastname);
             request.setAttribute("email", email);
             request.setAttribute("error", true);
             response.setStatus(422);
@@ -190,13 +190,13 @@ public class UsersServlet extends HttpServlet {
         }
 
         // BEGIN
-        String username = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
+        String username = request.getParameter("firstName");
+        String lastname = request.getParameter("lastName");
         String email = request.getParameter("email");
         if ((username == null || username.isEmpty()) || (lastname == null || lastname.isEmpty())) {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
-            request.setAttribute("firstname", username);
-            request.setAttribute("lastname", lastname);
+            request.setAttribute("firstName", username);
+            request.setAttribute("lastName", lastname);
             request.setAttribute("email", email);
             request.setAttribute("error", true);
             response.setStatus(422);
