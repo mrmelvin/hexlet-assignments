@@ -1,0 +1,16 @@
+2023-01-18 21:42:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "?"
+Data conversion error converting "?"; SQL statement:
+UPDATE articles SET title = '?', body = '?' WHERE id = '?' [22018-200]
+2023-01-18 21:53:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "?"
+Data conversion error converting "?"; SQL statement:
+UPDATE articles SET title = '?', body = '?' WHERE id = '?' [22018-200]
+2023-01-18 21:53:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "?"
+Data conversion error converting "?"; SQL statement:
+UPDATE articles SET title = '?', body = '?' WHERE id = '?' [22018-200]
+2023-01-18 21:53:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "?"
+Data conversion error converting "?"; SQL statement:
+UPDATE articles SET title = '?', body = '?' WHERE id = '?' [22018-200]
