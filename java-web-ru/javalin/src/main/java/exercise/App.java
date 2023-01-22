@@ -3,6 +3,9 @@ package exercise;
 // Импортируем зависимости, необходимые для работы приложения
 import io.javalin.Javalin;
 import io.javalin.plugin.rendering.template.JavalinThymeleaf;
+import static io.javalin.apibuilder.ApiBuilder.path;
+import static io.javalin.apibuilder.ApiBuilder.get;
+import static io.javalin.apibuilder.ApiBuilder.post;
 
 import org.thymeleaf.TemplateEngine;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
@@ -11,8 +14,6 @@ import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 
 import exercise.controllers.RootController;
 import exercise.controllers.ArticleController;
-
-import static io.javalin.apibuilder.ApiBuilder.*;
 
 public final class App {
 
@@ -51,6 +52,9 @@ public final class App {
             path("articles", () -> {
                 get(ArticleController.listArticles);
                 post(ArticleController.createArticle);
+                path("new", () -> {
+                    get(ArticleController.newArticle);
+                });
                 path("{id}", () -> {
                     get(ArticleController.showArticle);
                     path("edit", () -> {
@@ -61,9 +65,6 @@ public final class App {
                         get(ArticleController.deleteArticle);
                         post(ArticleController.destroyArticle);
                     });
-                });
-                path("new", () -> {
-                    get(ArticleController.newArticle);
                 });
             });
         });
